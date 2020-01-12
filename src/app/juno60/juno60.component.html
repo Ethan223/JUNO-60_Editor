@@ -10,9 +10,70 @@
         <th>CHORUS</th>
     </tr>
     <tr>
+        <!--LFO contents-->
         <td>
-            <mat-slider vertical min="1" max="10" step="1" value="0"></mat-slider>
-            <mat-slider vertical min="1" max="10" step="1" value="0"></mat-slider>
+            <table>
+                <tr>
+                    <td>RATE</td>
+                    <td>DELAY TIME</td>
+                    <td>TRIG MODE</td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-slider vertical min="1" max="10" step="1" value="0"></mat-slider>
+                    </td>
+                    <td>
+                        <mat-slider vertical min="1" max="10" step="1" value="0"></mat-slider>
+                    </td>
+                    <td>
+                        <mat-radio-button class="radio-button" checked="true">AUTO</mat-radio-button>
+                        <mat-radio-button class="radio-button">MAN</mat-radio-button>
+                    </td>
+                </tr> 
+            </table>
         </td>
+        <!--DCO contents-->
+        <td>
+            <table>
+                <tr>
+                    <td>LFO</td>
+                    <td>PWM</td>
+                    <td>--</td>
+                    <td>waves</td>
+                    <td>SUB OSC</td>
+                    <td>NOISE</td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-slider vertical min="1" max="10" step="1" value="0"></mat-slider>
+                    </td>
+                    <td>
+                        <mat-slider vertical min="1" max="10" step="1" value="0"></mat-slider>
+                    </td>
+                    <td>
+                        <mat-radio-button class="radio-button">LFO</mat-radio-button>
+                        <mat-radio-button class="radio-button" checked="true">MAN</mat-radio-button>
+                        <mat-radio-button class="radio-button">ENV</mat-radio-button>
+                    </td>
+                    <td>
+                        <mat-button-toggle>∏</mat-button-toggle>
+                        <mat-button-toggle>^</mat-button-toggle>
+                        <mat-button-toggle>SUB ∏</mat-button-toggle>
+                    </td>
+                    <td>
+                        <mat-slider vertical min="1" max="10" step="1" value="0"></mat-slider>
+                    </td>
+                    <td>
+                        <mat-slider vertical min="1" max="10" step="1" value="0"></mat-slider>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <!--HPF contents-->
+
+        <!--VCF contents-->
+        <!--VCA contents-->
+        <!--ENV contents-->
+        <!--CHORUS contents-->
     </tr>
 </table>

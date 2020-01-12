@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Juno60Component } from './juno60/juno60.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider'
+import { MatSliderModule, MatRadioModule, MatButtonToggleModule } from '@angular/material'
 
 @NgModule({
   declarations: [
@@ -16,7 +16,9 @@ import { MatSliderModule } from '@angular/material/slider'
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    MatRadioModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,5 +10,11 @@ td, th {
 }
 
 h1 {
-  text-align: center;
+    text-align: center;
+}
+
+.radio-button {
+  display: flex;
+  flex-direction: column;
+  margin: 4px;
 }
