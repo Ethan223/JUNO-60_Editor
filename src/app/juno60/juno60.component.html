@@ -20,14 +20,16 @@
                 </tr>
                 <tr>
                     <td>
-                        <mat-slider vertical min="1" max="10" step="1" value="0"></mat-slider>
+                        <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
                     </td>
                     <td>
-                        <mat-slider vertical min="1" max="10" step="1" value="0"></mat-slider>
+                        <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
                     </td>
                     <td>
-                        <mat-radio-button class="radio-button" checked="true">AUTO</mat-radio-button>
-                        <mat-radio-button class="radio-button">MAN</mat-radio-button>
+                        <mat-radio-group>
+                            <mat-radio-button class="radio-button" checked="true">AUTO</mat-radio-button>
+                            <mat-radio-button class="radio-button">MAN</mat-radio-button>
+                        </mat-radio-group>
                     </td>
                 </tr> 
             </table>
@@ -38,42 +40,153 @@
                 <tr>
                     <td>LFO</td>
                     <td>PWM</td>
-                    <td>--</td>
-                    <td>waves</td>
+                    <td></td>
+                    <td></td>
                     <td>SUB OSC</td>
                     <td>NOISE</td>
                 </tr>
                 <tr>
                     <td>
-                        <mat-slider vertical min="1" max="10" step="1" value="0"></mat-slider>
+                        <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
                     </td>
                     <td>
-                        <mat-slider vertical min="1" max="10" step="1" value="0"></mat-slider>
+                        <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
                     </td>
                     <td>
-                        <mat-radio-button class="radio-button">LFO</mat-radio-button>
-                        <mat-radio-button class="radio-button" checked="true">MAN</mat-radio-button>
-                        <mat-radio-button class="radio-button">ENV</mat-radio-button>
+                        <mat-radio-group>
+                            <mat-radio-button class="radio-button">LFO</mat-radio-button>
+                            <mat-radio-button class="radio-button" checked="true">MAN</mat-radio-button>
+                            <mat-radio-button class="radio-button">ENV</mat-radio-button>
+                        </mat-radio-group>                        
                     </td>
                     <td>
-                        <mat-button-toggle>∏</mat-button-toggle>
-                        <mat-button-toggle>^</mat-button-toggle>
-                        <mat-button-toggle>SUB ∏</mat-button-toggle>
+                        <mat-button-toggle>SQ</mat-button-toggle>
+                        <mat-button-toggle>SAW</mat-button-toggle>
+                        <mat-button-toggle>SUB</mat-button-toggle>
                     </td>
                     <td>
-                        <mat-slider vertical min="1" max="10" step="1" value="0"></mat-slider>
+                        <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
                     </td>
                     <td>
-                        <mat-slider vertical min="1" max="10" step="1" value="0"></mat-slider>
+                        <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
                     </td>
                 </tr>
             </table>
         </td>
         <!--HPF contents-->
-
+        <td>
+            <table>
+                <tr>
+                   <td>FREQ</td> 
+                </tr>
+                <tr>
+                    <td>
+                        <mat-slider vertical min="0" max="3" step="1" value="0"></mat-slider>
+                    </td>
+                </tr>
+            </table>            
+        </td>
         <!--VCF contents-->
+        <td>
+            <table>
+                <tr>
+                    <td>FREQ</td>
+                    <td>RES</td>
+                    <td>-</td>
+                    <td>ENV</td>
+                    <td>LFO</td>
+                    <td>KYBD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
+                    </td>
+                    <td>
+                        <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
+                    </td>
+                    <td>
+                        <mat-radio-group>
+                            <mat-radio-button class="radio-button" checked="true">P</mat-radio-button>
+                            <mat-radio-button class="radio-button">N</mat-radio-button>
+                        </mat-radio-group>                        
+                    </td>
+                    <td>
+                        <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
+                    </td>
+                    <td>
+                        <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
+                    </td>
+                    <td>
+                        <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
+                    </td>
+                </tr>
+            </table>
+        </td>
         <!--VCA contents-->
+        <td>
+            <table>
+                <tr>
+                    <td>-</td>
+                    <td>LEVEL</td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-radio-group>
+                            <mat-radio-button class="radio-button" checked="true">E</mat-radio-button>
+                            <mat-radio-button class="radio-button">G</mat-radio-button>
+                        </mat-radio-group>
+                    </td>
+                    <td>
+                        <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider> 
+                    </td>
+                </tr>
+            </table>
+        </td>
         <!--ENV contents-->
+        <td>
+            <table>
+               <tr>
+                   <td>A</td>
+                   <td>D</td>
+                   <td>S</td>
+                   <td>R</td>
+               </tr>
+               <tr>
+                <td>
+                    <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
+                </td>
+                <td>
+                    <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
+                </td>
+                <td>
+                    <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
+                </td>
+                <td>
+                    <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
+                </td>  
+               </tr> 
+            </table>
+        </td>
         <!--CHORUS contents-->
+        <td class="chorus">
+            <table>
+                <tr>
+                    <td>OFF</td>
+                    <td>I</td>
+                    <td>II</td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-button-toggle></mat-button-toggle>
+                    </td>
+                    <td>
+                        <mat-button-toggle></mat-button-toggle>
+                    </td>
+                    <td>
+                        <mat-button-toggle></mat-button-toggle>
+                    </td>
+                </tr>
+            </table>
+        </td>
     </tr>
 </table>
