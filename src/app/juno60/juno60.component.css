@@ -1,26 +1,26 @@
 table {
     border-collapse: collapse;
     width: 100%;
-  }
-  
-td, th {
-    border: 1px solid #000000;
-    text-align: center;
-    padding: 3px;
 }
 
 h1 {
     text-align: center;
 }
 
+.main-board, th {
+  border: 1px solid #000000;
+  text-align: center;
+  padding: 3px;
+}
+
+th {
+  background-color: red;
+}
+
 .radio-button {
   display: flex;
   flex-direction: column;
   margin: 4px;
-}
-
-.subtable {
-  text-align: center;
 }
 
 .chorus {
