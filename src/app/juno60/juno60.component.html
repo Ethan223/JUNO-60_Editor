@@ -22,9 +22,9 @@
                         <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
                     </td>
                     <td>
-                        <mat-radio-group>
-                            <mat-radio-button class="radio-button" checked="true">AUTO</mat-radio-button>
-                            <mat-radio-button class="radio-button">MAN</mat-radio-button>
+                        <mat-radio-group aria-label="lfoTriggerMode">
+                            <mat-radio-button class="radio-button" value="auto" checked="true">AUTO</mat-radio-button>
+                            <mat-radio-button class="radio-button" value="manual">MAN</mat-radio-button>
                         </mat-radio-group>
                     </td>
                 </tr> 
@@ -49,10 +49,10 @@
                         <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
                     </td>
                     <td>
-                        <mat-radio-group>
-                            <mat-radio-button class="radio-button">LFO</mat-radio-button>
-                            <mat-radio-button class="radio-button" checked="true">MAN</mat-radio-button>
-                            <mat-radio-button class="radio-button">ENV</mat-radio-button>
+                        <mat-radio-group aria-label="pulseWidthMod">
+                            <mat-radio-button class="radio-button" value="lfo">LFO</mat-radio-button>
+                            <mat-radio-button class="radio-button" value="manual" checked="true">MAN</mat-radio-button>
+                            <mat-radio-button class="radio-button" value="env">ENV</mat-radio-button>
                         </mat-radio-group>                        
                     </td>
                     <td>
@@ -112,9 +112,9 @@
                         <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>
                     </td>
                     <td>
-                        <mat-radio-group>
-                            <mat-radio-button class="radio-button" checked="true">P</mat-radio-button>
-                            <mat-radio-button class="radio-button">N</mat-radio-button>
+                        <mat-radio-group aria-label="envPolarity">
+                            <mat-radio-button class="radio-button" value="1" checked="true">P</mat-radio-button>
+                            <mat-radio-button class="radio-button" value="2">N</mat-radio-button>
                         </mat-radio-group>                        
                     </td>
                     <td>
@@ -138,9 +138,9 @@
                 </tr>
                 <tr>
                     <td>
-                        <mat-radio-group>
-                            <mat-radio-button class="radio-button" checked="true">E</mat-radio-button>
-                            <mat-radio-button class="radio-button">G</mat-radio-button>
+                        <mat-radio-group aria-label="lfoTriggerMode">
+                            <mat-radio-button class="radio-button" value="env" checked="true">E</mat-radio-button>
+                            <mat-radio-button class="radio-button" value="gate">G</mat-radio-button>
                         </mat-radio-group>
                     </td>
                     <td>
