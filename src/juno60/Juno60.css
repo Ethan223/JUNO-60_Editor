@@ -17,6 +17,11 @@ th {
   background-color: red;
 }
 
+input {
+  -webkit-appearance: slider-vertical;
+  width: 50px;
+}
+
 .radio-button {
   display: flex;
   flex-direction: column;

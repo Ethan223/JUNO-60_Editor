@@ -24,16 +24,14 @@ class Juno60 extends Component {
                                 </tr>
                                 <tr>
                                     <td>
-                                        {/* <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider> */}
+                                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                                     </td>
                                     <td>
-                                        {/* <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider> */}
+                                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                                     </td>
                                     <td>
-                                        {/* <mat-radio-group aria-label="lfoTriggerMode">
-                                            <mat-radio-button class="radio-button" value="auto" checked="true">AUTO</mat-radio-button>
-                                            <mat-radio-button class="radio-button" value="manual">MAN</mat-radio-button>
-                                        </mat-radio-group> */}
+                                        <input type="radio" name="trigMode" value="auto"></input>AUTO<br></br>
+                                        <input type="radio" name="trigMode" value="man"></input>MAN<br></br>
                                     </td>
                                 </tr> 
                             </table>
@@ -51,28 +49,26 @@ class Juno60 extends Component {
                                 </tr>
                                 <tr>
                                     <td>
-                                        {/* <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider> */}
+                                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                                     </td>
                                     <td>
-                                        {/* <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider> */}
+                                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                                     </td>
                                     <td>
-                                        {/* <mat-radio-group aria-label="pulseWidthMod">
-                                            <mat-radio-button class="radio-button" value="lfo">LFO</mat-radio-button>
-                                            <mat-radio-button class="radio-button" value="manual" checked="true">MAN</mat-radio-button>
-                                            <mat-radio-button class="radio-button" value="env">ENV</mat-radio-button>
-                                        </mat-radio-group>                         */}
+                                        <input type="radio" name="pulseWidthMod" value="lfo"></input>LFO<br></br>
+                                        <input type="radio" name="pulseWidthMod" value="manual"></input>MAN<br></br>
+                                        <input type="radio" name="pulseWidthMod" value="env"></input>ENV<br></br>
                                     </td>
                                     <td>
-                                        {/* <mat-button-toggle>SQ</mat-button-toggle>
-                                        <mat-button-toggle>SAW</mat-button-toggle>
-                                        <mat-button-toggle>SUB</mat-button-toggle> */}
+                                        <input type="checkbox"></input>SQU
+                                        <input type="checkbox"></input>SAW
+                                        <input type="checkbox"></input>SUB
                                     </td>
                                     <td>
-                                        {/* <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider> */}
+                                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                                     </td>
                                     <td>
-                                        {/* <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider> */}
+                                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                                     </td>
                                 </tr>
                             </table>
@@ -85,7 +81,7 @@ class Juno60 extends Component {
                                 </tr>
                                 <tr>
                                     <td>
-                                        {/* <mat-slider vertical min="0" max="3" step="1" value="0"></mat-slider> */}
+                                        <input type="range" min="0" max="3" step="1" defaultValue="0"></input>
                                     </td>
                                 </tr>
                             </table>            
@@ -114,25 +110,23 @@ class Juno60 extends Component {
                                 </tr>
                                 <tr>
                                     <td>
-                                        {/* <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider> */}
+                                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                                     </td>
                                     <td>
-                                        {/* <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider> */}
+                                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                                     </td>
                                     <td>
-                                        {/* <mat-radio-group aria-label="envPolarity">
-                                            <mat-radio-button class="radio-button" value="1" checked="true">P</mat-radio-button>
-                                            <mat-radio-button class="radio-button" value="2">N</mat-radio-button>
-                                        </mat-radio-group>*/}
+                                        <input type="radio" name="envPolarity" value="pos"></input>+<br></br>
+                                        <input type="radio" name="envPolarity" value="neg"></input>-<br></br>
                                     </td>
                                     <td>
-                                        {/* <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider> */}
+                                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                                     </td>
                                     <td>
-                                        {/* <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider> */}
+                                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                                     </td>
                                     <td>
-                                        {/* <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider> */}
+                                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                                     </td>
                                 </tr>
                             </table>
@@ -146,13 +140,11 @@ class Juno60 extends Component {
                                 </tr>
                                 <tr>
                                     <td>
-                                        {/* <mat-radio-group aria-label="lfoTriggerMode">
-                                            <mat-radio-button class="radio-button" value="env" checked="true">E</mat-radio-button>
-                                            <mat-radio-button class="radio-button" value="gate">G</mat-radio-button>
-                                        </mat-radio-group> */}
+                                        <input type="radio" name="vca" value="env"></input>ENV<br></br>
+                                        <input type="radio" name="vca" value="gate"></input>GATE<br></br>
                                     </td>
                                     <td>
-                                        {/* <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider>  */}
+                                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                                     </td>
                                 </tr>
                             </table>
@@ -168,16 +160,16 @@ class Juno60 extends Component {
                             </tr>
                             <tr>
                                 <td>
-                                    {/* <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider> */}
+                                    <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                                 </td>
                                 <td>
-                                    {/* <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider> */}
+                                    <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                                 </td>
                                 <td>
-                                    {/* <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider> */}
+                                    <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                                 </td>
                                 <td>
-                                    {/* <mat-slider vertical min="0" max="10" step="1" value="0"></mat-slider> */}
+                                    <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                                 </td>  
                             </tr> 
                             </table>
