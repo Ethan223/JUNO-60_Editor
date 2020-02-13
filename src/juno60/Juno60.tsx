@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.png';
 import './Juno60.css'
 
 class Juno60 extends Component {
@@ -43,7 +42,7 @@ class Juno60 extends Component {
                                     <td>LFO</td>
                                     <td>PWM</td>
                                     <td></td>
-                                    <td></td>
+                                    <td>SQU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAW&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUB</td>
                                     <td>SUB OSC</td>
                                     <td>NOISE</td>
                                 </tr>
@@ -59,10 +58,10 @@ class Juno60 extends Component {
                                         <input type="radio" name="pulseWidthMod" value="manual"></input>MAN<br></br>
                                         <input type="radio" name="pulseWidthMod" value="env"></input>ENV<br></br>
                                     </td>
-                                    <td>
-                                        <input type="checkbox"></input>SQU
-                                        <input type="checkbox"></input>SAW
-                                        <input type="checkbox"></input>SUB
+                                    <td className="chorus">
+                                        <input type="checkbox"></input>
+                                        <input type="checkbox"></input>
+                                        <input type="checkbox"></input>
                                     </td>
                                     <td>
                                         <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
@@ -184,13 +183,13 @@ class Juno60 extends Component {
                                 </tr>
                                 <tr>
                                     <td>
-                                        {/* <mat-button-toggle></mat-button-toggle> */}
+                                        <input type="checkbox"></input>
                                     </td>
                                     <td>
-                                        {/* <mat-button-toggle></mat-button-toggle> */}
+                                        <input type="checkbox"></input>
                                     </td>
                                     <td>
-                                        {/* <mat-button-toggle></mat-button-toggle> */}
+                                        <input type="checkbox"></input>
                                     </td>
                                 </tr>
                             </table>
