@@ -25,3 +25,7 @@ input {
 .chorus {
   vertical-align: top;
 }
+
+.radioButton {
+  text-align: left;
+}

@@ -73,7 +73,7 @@ class Juno60 extends Component {
                     <td>
                         <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                     </td>
-                    <td>
+                    <td className="radioButton">
                         <input type="radio" name="trigMode" value="auto"></input>AUTO<br></br>
                         <input type="radio" name="trigMode" value="man"></input>MAN<br></br>
                     </td>
@@ -100,7 +100,7 @@ class Juno60 extends Component {
                     <td>
                         <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                     </td>
-                    <td>
+                    <td className="radioButton">
                         <input type="radio" name="pulseWidthMod" value="lfo"></input>LFO<br></br>
                         <input type="radio" name="pulseWidthMod" value="manual"></input>MAN<br></br>
                         <input type="radio" name="pulseWidthMod" value="env"></input>ENV<br></br>
@@ -154,7 +154,7 @@ class Juno60 extends Component {
                     <td>
                         <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                     </td>
-                    <td>
+                    <td className="radioButton">
                         <input type="radio" name="envPolarity" value="pos"></input>+<br></br>
                         <input type="radio" name="envPolarity" value="neg"></input>-<br></br>
                     </td>
@@ -180,7 +180,7 @@ class Juno60 extends Component {
                     <td>LEVEL</td>
                 </tr>
                 <tr>
-                    <td>
+                    <td className="radioButton">
                         <input type="radio" name="vca" value="env"></input>ENV<br></br>
                         <input type="radio" name="vca" value="gate"></input>GATE<br></br>
                     </td>
