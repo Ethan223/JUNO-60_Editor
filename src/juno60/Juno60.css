@@ -7,7 +7,12 @@ h1 {
     text-align: center;
 }
 
-.main-board, th {
+.main {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.board-comp, th {
   border: 1px solid #000000;
   text-align: center;
   padding: 3px;
