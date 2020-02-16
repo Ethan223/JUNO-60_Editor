@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './Juno60.css'
 
 class Juno60 extends Component {
+    handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+        console.log(e.target.value);
+    }
+
     render() {
         return(
             <div className="main">
@@ -79,7 +83,7 @@ class Juno60 extends Component {
                 <tbody>
                     <tr>
                         <td>
-                            <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
+                            <input type="range" min="0" max="10" step="0.5" defaultValue="0" onChange={this.handleChange}></input>
                         </td>
                         <td>
                             <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
