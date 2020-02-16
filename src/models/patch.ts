@@ -1,8 +1,14 @@
+import { LfoTriggerMode } from "../enums/LfoTriggerMode";
+import { PwmType } from "../enums/PwmType";
+import { VcfPolarity } from "../enums/VcfPolarity";
+import { ChorusType } from "../enums/ChorusType";
+import { VcaRoute } from "../enums/VcaRoute";
+
 export class Patch {
-    constructor(lfoRate: number, lfoDelay: number, lfoTrigMode: number, 
-        dcoLfoMod: number, dcoPwm: number, dcoPwmType: number, dcoSquare: boolean, dcoSaw: boolean, dcoSubOsc: boolean, dcoSubOscAmount: number, dcoNoise: number,
-        hpfCutoff: number, vcfCutoff: number, vcfRes: number, vcfPolarity: number, vcfEnvMod: number, vcfLfoMod: number, vcfKybdMod: number, 
-        vcaRoute: number, vcaLevel: number, envAttack: number, envDecay: number, envSustain: number, envRelease: number, chorusType: number
+    constructor(lfoRate: number, lfoDelay: number, lfoTrigMode: LfoTriggerMode, 
+        dcoLfoMod: number, dcoPwm: number, dcoPwmType: PwmType, dcoSquare: boolean, dcoSaw: boolean, dcoSubOsc: boolean, dcoSubOscAmount: number, dcoNoise: number,
+        hpfCutoff: number, vcfCutoff: number, vcfRes: number, vcfPolarity: VcfPolarity, vcfEnvMod: number, vcfLfoMod: number, vcfKybdMod: number, 
+        vcaRoute: number, vcaLevel: VcfPolarity, envAttack: number, envDecay: number, envSustain: number, envRelease: number, chorus: ChorusType
     ) {
         this.lfoRate = lfoRate;
         this.lfoDelay = lfoDelay;
@@ -28,16 +34,16 @@ export class Patch {
         this.envDecay = envDecay;
         this.envSustain = envSustain;
         this.envRelease = envRelease;
-        this.chorusType = chorusType;
+        this.chorus = chorus;
     }
     
     lfoRate: number;
     lfoDelay: number;
-    lfoTrigMode: number; // Possible enum
+    lfoTrigMode: LfoTriggerMode;
     
     dcoLfoMod: number;
     dcoPwm: number;
-    dcoPwmType: number; // Possible enum
+    dcoPwmType: PwmType;
     dcoSquare: boolean;
     dcoSaw: boolean;
     dcoSubOsc: boolean;
@@ -48,12 +54,12 @@ export class Patch {
 
     vcfCutoff: number;
     vcfRes: number;
-    vcfPolarity: number; // Possible enum
+    vcfPolarity: VcfPolarity;
     vcfEnvMod: number;
     vcfLfoMod: number;
     vcfKybdMod: number;
 
-    vcaRoute: number; // Possible enum
+    vcaRoute: VcaRoute;
     vcaLevel: number;
 
     envAttack: number;
@@ -61,5 +67,5 @@ export class Patch {
     envSustain: number;
     envRelease: number;
 
-    chorusType: number; // Possible enum
+    chorus: ChorusType;
 }
