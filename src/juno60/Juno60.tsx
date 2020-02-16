@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
+import { Patch } from '../models/patch';
+import { LfoTriggerMode } from '../enums/LfoTriggerMode';
+import { PwmType } from '../enums/PwmType';
+import { VcfPolarity } from '../enums/VcfPolarity';
+import { VcaRoute } from '../enums/VcaRoute';
+import { ChorusType } from '../enums/ChorusType';
 import './Juno60.css'
 
 class Juno60 extends Component {
-    handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-        console.log(e.target.value);
+    constructor() {
+        super({});
+        this.currPatch = new Patch(0, 0, LfoTriggerMode.AUTO, 0, 0, PwmType.MAN, false, true, false, 0, 0, 0, 10, 0, VcfPolarity.NORMAL, 0, 0, 0, VcaRoute.GATE, 5, 0, 0, 10, 0, ChorusType.OFF);
     }
+
+    currPatch: Patch;
 
     render() {
         return(
@@ -83,7 +92,7 @@ class Juno60 extends Component {
                 <tbody>
                     <tr>
                         <td>
-                            <input type="range" min="0" max="10" step="0.5" defaultValue="0" onChange={this.handleChange}></input>
+                            <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
                         </td>
                         <td>
                             <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
