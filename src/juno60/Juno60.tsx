@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Patch } from '../models/patch';
 import { LfoTriggerMode } from '../enums/LfoTriggerMode';
 import { PwmType } from '../enums/PwmType';
@@ -25,16 +25,16 @@ const Juno60: React.FC = () =>  {
                     <tr>
                         {/*LFO contents*/}
                         <td className="board-comp">
-                            {<LFO />}
+                            <LFO onChange={ state => console.log(state) } />
                         </td>
                         {/* DCO contents */}
                         <td className="board-comp">
-                            {<DCO />}
+                            <DCO />
                         </td>
                         {/* HPF contents */}
                         <td className="board-comp">
-                            {<HPF />}            
-                        </td>        
+                            <HPF />
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -47,33 +47,47 @@ const Juno60: React.FC = () =>  {
                         <th>ENV</th>
                         <th>CHORUS</th>
                     </tr>
-                </thead>                    
+                </thead>
                 <tbody>
                     <tr>
                         {/* VCF contents */}
                         <td className="board-comp">
-                            {<VCF />}
+                            <VCF />
                         </td>
                         {/* VCA contents */}
                         <td className="board-comp">
-                            {<VCA />} 
+                            <VCA />
                         </td>
                         {/* ENV contents */}
                         <td className="board-comp">
-                            {<ENV />}  
+                            <ENV />
                         </td>
                         {/* CHORUS contents */}
                         <td className="chorus">
-                            {<CHORUS />} 
+                            <CHORUS />
                         </td>
                     </tr>
-                </tbody>                     
+                </tbody>
             </table>
         </div>
     )
 }
 
-const LFO: React.FC = () => {
+interface LFOState {
+    LFO_RATE: number;
+    LFO_DELAY: number;
+    TRIG_MODE: LfoTriggerMode;
+}
+
+interface LFOProps {
+    onChange: (state: LFOState) => void;
+}
+
+const LFO: React.FC<LFOProps> = props => {
+    const [state, setState] = useState<LFOState>({LFO_RATE: 0, LFO_DELAY: 0, TRIG_MODE: LfoTriggerMode.AUTO});
+    const updateStateHandler = (key: keyof LFOState) => (ev: React.ChangeEvent<HTMLInputElement>) => setState({ ...state, [key]: Number(ev.target.value)});
+    props.onChange(state);
+
     return(
         <table>
             <thead>
@@ -86,10 +100,10 @@ const LFO: React.FC = () => {
             <tbody>
                 <tr>
                     <td>
-                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
+                        <input type="range" min="0" max="10" step="0.5" defaultValue={state.LFO_RATE} onChange={updateStateHandler("LFO_RATE")}></input>
                     </td>
                     <td>
-                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
+                        <input type="range" min="0" max="10" step="0.5" defaultValue={state.LFO_DELAY} onChange={updateStateHandler("LFO_DELAY")}></input>
                     </td>
                     <td className="radioButton">
                         <input type="radio" name="trigMode" value="auto" checked></input>AUTO<br></br>
@@ -268,7 +282,7 @@ const CHORUS: React.FC = () => {
                     <td>II</td>
                 </tr>
             </thead>
-            <tbody>                
+            <tbody>
                 <tr>
                     <td>
                         <input type="checkbox" checked></input>
