@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Juno60 from './juno60/Juno60'
+import Juno60 from './components/Juno60'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Juno60 />, document.getElementById('root'));
