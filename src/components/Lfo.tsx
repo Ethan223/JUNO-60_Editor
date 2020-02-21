@@ -11,11 +11,11 @@ interface LFOProps {
     onChange: (state: LFOState) => void;
 }
 
-const Lfo: React.FC<LFOProps> = props => {
+const Lfo: React.FC<LFOProps> = (props) => {
     const [state, setState] = useState<LFOState>({LFO_RATE: 0, LFO_DELAY: 0, TRIG_MODE: LfoTriggerMode.AUTO});
+    
     const updateStateHandler = (key: keyof LFOState) => (ev: React.ChangeEvent<HTMLInputElement>) => {
-        setState({ ...state, [key]: Number(ev.target.value)});
-        console.log(ev.target.value);
+        setState({...state, [key]: Number(ev.target.value)});
     }
     props.onChange(state);
 

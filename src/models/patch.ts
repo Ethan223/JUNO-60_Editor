@@ -2,7 +2,7 @@ import { LfoTriggerMode, PwmType, VcfPolarity, VcaRoute, ChorusType } from '../e
 
 export class Patch {
     constructor(lfoRate: number, lfoDelay: number, lfoTrigMode: LfoTriggerMode, 
-        dcoLfoMod: number, dcoPwm: number, dcoPwmType: PwmType, dcoSquare: boolean, dcoSaw: boolean, dcoSubOsc: boolean, dcoSubOscAmount: number, dcoNoise: number,
+        dcoLfoMod: number, dcoPwm: number, dcoPwmType: PwmType, dcoSquare: boolean, dcoSaw: boolean, dcoSub: boolean, dcoSubOsc: number, dcoNoise: number,
         hpfCutoff: number, vcfCutoff: number, vcfRes: number, vcfPolarity: VcfPolarity, vcfEnvMod: number, vcfLfoMod: number, vcfKybdMod: number, 
         vcaRoute: VcaRoute, vcaLevel: VcfPolarity, envAttack: number, envDecay: number, envSustain: number, envRelease: number, chorus: ChorusType
     ) {
@@ -14,8 +14,8 @@ export class Patch {
         this.dcoPwmType = dcoPwmType;
         this.dcoSquare = dcoSquare;
         this.dcoSaw = dcoSaw;
+        this.dcoSub = dcoSub;
         this.dcoSubOsc = dcoSubOsc;
-        this.dcoSubOscAmount = dcoSubOscAmount;
         this.dcoNoise = dcoNoise;
         this.hpfCutoff = hpfCutoff;
         this.vcfCutoff = vcfCutoff;
@@ -42,8 +42,8 @@ export class Patch {
     dcoPwmType: PwmType;
     dcoSquare: boolean;
     dcoSaw: boolean;
-    dcoSubOsc: boolean;
-    dcoSubOscAmount: number;
+    dcoSub: boolean;
+    dcoSubOsc: number;
     dcoNoise: number;
 
     hpfCutoff: number;

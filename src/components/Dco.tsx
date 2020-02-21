@@ -1,6 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { PwmType } from '../enums/Enums';
 
-const Dco: React.FC = () => {
+interface DCOState {
+    LFO_MOD: number;
+    PWM: number;
+    PWM_TYPE: PwmType;
+    DCO_SQUARE: boolean;
+    DCO_SAW: boolean;
+    DCO_SUB: boolean;
+    DCO_SUBOSC: number;
+    DCO_NOISE: number;
+}
+
+interface DCOProps {
+    onChange: (state: DCOState) => void;
+}
+
+const Dco: React.FC<DCOProps> = (props) => {
+    const [state, setState] = useState<DCOState>({
+        LFO_MOD: 0,
+        PWM: 0,
+        PWM_TYPE: PwmType.MAN,
+        DCO_SQUARE: false,
+        DCO_SAW: true,
+        DCO_SUB: false,
+        DCO_SUBOSC: 0,
+        DCO_NOISE: 0
+    });
+
+    const updateStateHandler = (key: keyof DCOState) => (ev: React.ChangeEvent<HTMLInputElement>) => {
+        setState({...state, [key]: Number(ev.target.value)});
+    }
+    props.onChange(state);
+
     return(
         <table>
             <thead>
