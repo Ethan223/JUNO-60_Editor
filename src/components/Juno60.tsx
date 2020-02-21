@@ -1,10 +1,4 @@
-import React, { useState } from 'react';
-import { Patch } from '../models/patch';
-import { LfoTriggerMode } from '../enums/LfoTriggerMode';
-import { PwmType } from '../enums/PwmType';
-import { VcfPolarity } from '../enums/VcfPolarity';
-import { VcaRoute } from '../enums/VcaRoute';
-import { ChorusType } from '../enums/ChorusType';
+import React from 'react';
 import './Juno60.css'
 import Lfo from './Lfo';
 import Dco from './Dco';

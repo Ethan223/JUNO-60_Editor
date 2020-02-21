@@ -1,14 +1,10 @@
-import { LfoTriggerMode } from "../enums/LfoTriggerMode";
-import { PwmType } from "../enums/PwmType";
-import { VcfPolarity } from "../enums/VcfPolarity";
-import { ChorusType } from "../enums/ChorusType";
-import { VcaRoute } from "../enums/VcaRoute";
+import { LfoTriggerMode, PwmType, VcfPolarity, VcaRoute, ChorusType } from '../enums/Enums';
 
 export class Patch {
     constructor(lfoRate: number, lfoDelay: number, lfoTrigMode: LfoTriggerMode, 
         dcoLfoMod: number, dcoPwm: number, dcoPwmType: PwmType, dcoSquare: boolean, dcoSaw: boolean, dcoSubOsc: boolean, dcoSubOscAmount: number, dcoNoise: number,
         hpfCutoff: number, vcfCutoff: number, vcfRes: number, vcfPolarity: VcfPolarity, vcfEnvMod: number, vcfLfoMod: number, vcfKybdMod: number, 
-        vcaRoute: number, vcaLevel: VcfPolarity, envAttack: number, envDecay: number, envSustain: number, envRelease: number, chorus: ChorusType
+        vcaRoute: VcaRoute, vcaLevel: VcfPolarity, envAttack: number, envDecay: number, envSustain: number, envRelease: number, chorus: ChorusType
     ) {
         this.lfoRate = lfoRate;
         this.lfoDelay = lfoDelay;
