@@ -28,11 +28,11 @@ const Juno60: React.FC = () =>  {
                         </td>
                         {/* DCO contents */}
                         <td className="board-comp">
-                            <Dco onChange={state => console.log(state)}/>
+                            <Dco onChange={state => console.log(state)} />
                         </td>
                         {/* HPF contents */}
                         <td className="board-comp">
-                            <Hpf />
+                            <Hpf onChange={state => console.log(state)} />
                         </td>
                     </tr>
                 </tbody>
