@@ -62,7 +62,7 @@ const Juno60: React.FC = () =>  {
                             <Env />
                         </td>
                         {/* CHORUS contents */}
-                        <td className="chorus">
+                        <td className="checkbox">
                             <Chorus />
                         </td>
                     </tr>

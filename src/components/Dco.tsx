@@ -63,7 +63,7 @@ const Dco: React.FC<DCOProps> = (props) => {
                         <input type="radio" name="pulseWidthMod" value={PwmType.MAN} checked={state.PWM_TYPE === PwmType.MAN} onChange={updateStateHandler("PWM_TYPE")}></input>MAN<br></br>
                         <input type="radio" name="pulseWidthMod" value={PwmType.ENV} checked={state.PWM_TYPE === PwmType.ENV} onChange={updateStateHandler("PWM_TYPE")}></input>ENV<br></br>
                     </td>
-                    <td className="chorus">
+                    <td className="checkbox">
                         <input type="checkbox" checked={state.DCO_PULSE === true} onChange={updateStateHandler("DCO_PULSE")}></input>
                         <input type="checkbox" checked={state.DCO_SAW === true} onChange={updateStateHandler("DCO_SAW")}></input>
                         <input type="checkbox" checked={state.DCO_SUB === true} onChange={updateStateHandler("DCO_SUB")}></input>
