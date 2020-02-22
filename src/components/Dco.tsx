@@ -29,7 +29,12 @@ const Dco: React.FC<DCOProps> = (props) => {
     });
 
     const updateStateHandler = (key: keyof DCOState) => (ev: React.ChangeEvent<HTMLInputElement>) => {
-        setState({...state, [key]: Number(ev.target.value)});
+        if (key === 'DCO_PULSE' || key === 'DCO_SAW' || key === 'DCO_SUB') {
+            setState({...state, [key]: ev.target.checked});
+        }
+        else {
+            setState({...state, [key]: Number(ev.target.value)});
+        }
     }
     props.onChange(state);
 
@@ -59,9 +64,9 @@ const Dco: React.FC<DCOProps> = (props) => {
                         <input type="radio" name="pulseWidthMod" value={PwmType.ENV} checked={state.PWM_TYPE === PwmType.ENV} onChange={updateStateHandler("PWM_TYPE")}></input>ENV<br></br>
                     </td>
                     <td className="chorus">
-                        <input type="checkbox" value="1" checked={state.DCO_PULSE === true} onChange={updateStateHandler("DCO_PULSE")}></input>
-                        <input type="checkbox" value="2" checked={state.DCO_SAW === true} onChange={updateStateHandler("DCO_SAW")}></input>
-                        <input type="checkbox" value="3" checked={state.DCO_SUB === true} onChange={updateStateHandler("DCO_SUB")}></input>
+                        <input type="checkbox" checked={state.DCO_PULSE === true} onChange={updateStateHandler("DCO_PULSE")}></input>
+                        <input type="checkbox" checked={state.DCO_SAW === true} onChange={updateStateHandler("DCO_SAW")}></input>
+                        <input type="checkbox" checked={state.DCO_SUB === true} onChange={updateStateHandler("DCO_SUB")}></input>
                     </td>
                     <td>
                         <input type="range" min="0" max="10" step="0.5" value={state.DCO_SUBOSC} onChange={updateStateHandler("DCO_SUBOSC")}></input>
