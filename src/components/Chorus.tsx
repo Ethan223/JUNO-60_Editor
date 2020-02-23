@@ -1,6 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ChorusType } from '../enums/Enums';
 
-const Chorus: React.FC = () => {
+interface ChorusState {
+    CHORUS: ChorusType;
+}
+
+interface ChorusProps {
+    onChange: (state: ChorusState) => void;
+}
+
+const Chorus: React.FC<ChorusProps> = (props) => {
+    const [state, setState] = useState<ChorusState>({
+        CHORUS: ChorusType.OFF
+    });
+
+    const updateStateHandler = (chorusType: ChorusType) => (ev: React.ChangeEvent<HTMLInputElement>) => {
+        if (chorusType === ChorusType.OFF) {
+            
+        }
+    }
+
+    props.onChange(state);
+
     return(
         <table>
             <thead>
@@ -13,13 +34,13 @@ const Chorus: React.FC = () => {
             <tbody>
                 <tr>
                     <td>
-                        <input type="checkbox" checked/>
+                        <input type="checkbox" checked={state.CHORUS === ChorusType.OFF} onChange={updateStateHandler(ChorusType.OFF)}/>
                     </td>
                     <td>
-                        <input type="checkbox"/>
+                        <input type="checkbox" checked={state.CHORUS === ChorusType.I || state.CHORUS === ChorusType.BOTH} onChange={updateStateHandler(ChorusType.I)}/>
                     </td>
                     <td>
-                        <input type="checkbox"/>
+                        <input type="checkbox" checked={state.CHORUS === ChorusType.II || state.CHORUS === ChorusType.BOTH} onChange={updateStateHandler(ChorusType.II)}/>
                     </td>
                 </tr>
             </tbody>

@@ -1,6 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { VcaRoute } from '../enums/Enums';
 
-const Vca: React.FC = () => {
+interface VCAState {
+    ROUTE: VcaRoute;
+    LEVEL: number;
+}
+
+interface VCAProps {
+    onChange: (state: VCAState) => void;
+}
+
+const Vca: React.FC<VCAProps> = (props) => {
+    const [state, setState] = useState<VCAState>({ROUTE: VcaRoute.GATE, LEVEL: 0});
+
+    const updateStateHandler = (key: keyof VCAState) => (ev: React.ChangeEvent<HTMLInputElement>) => {
+        setState({...state, [key]: Number(ev.target.value)});
+    }
+    props.onChange(state);
+
     return(
         <table>
             <thead>
@@ -12,11 +29,11 @@ const Vca: React.FC = () => {
             <tbody>
                 <tr>
                     <td className="radioButton">
-                        <input type="radio" name="vca" value="env"/>ENV<br/>
-                        <input type="radio" name="vca" value="gate" checked/>GATE<br/>
+                        <input type="radio" name="vca" value={VcaRoute.ENV} checked={state.ROUTE === VcaRoute.ENV} onChange={updateStateHandler("ROUTE")}/>ENV<br/>
+                        <input type="radio" name="vca" value={VcaRoute.GATE} checked={state.ROUTE === VcaRoute.GATE} onChange={updateStateHandler("ROUTE")}/>GATE<br/>
                     </td>
                     <td>
-                        <input type="range" min="0" max="10" step="0.5" defaultValue="5"/>
+                        <input type="range" min="-5" max="5" step="0.5" value={state.LEVEL} onChange={updateStateHandler("LEVEL")}/>
                     </td>
                 </tr>
             </tbody>

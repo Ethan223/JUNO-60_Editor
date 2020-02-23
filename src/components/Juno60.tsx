@@ -55,15 +55,15 @@ const Juno60: React.FC = () =>  {
                         </td>
                         {/* VCA contents */}
                         <td className="board-comp">
-                            <Vca />
+                            <Vca onChange={state => console.log(state)} />
                         </td>
                         {/* ENV contents */}
                         <td className="board-comp">
-                            <Env />
+                            <Env onChange={state => console.log(state)} />
                         </td>
                         {/* CHORUS contents */}
                         <td className="checkbox">
-                            <Chorus />
+                            <Chorus onChange={state => console.log(state)} />
                         </td>
                     </tr>
                 </tbody>
