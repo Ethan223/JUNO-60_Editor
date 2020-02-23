@@ -14,19 +14,19 @@ const Env: React.FC = () => {
             <tbody>
                 <tr>
                     <td>
-                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
+                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"/>
                     </td>
                     <td>
-                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
+                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"/>
                     </td>
                     <td>
-                        <input type="range" min="0" max="10" step="0.5" defaultValue="10"></input>
+                        <input type="range" min="0" max="10" step="0.5" defaultValue="10"/>
                     </td>
                     <td>
-                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
-                    </td>  
-                </tr> 
-            </tbody>                
+                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"/>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     )
 }

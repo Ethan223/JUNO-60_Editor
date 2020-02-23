@@ -24,17 +24,17 @@ const Lfo: React.FC<LFOProps> = (props) => {
             <thead>
                 <tr>
                     <td>RATE</td>
-                    <td>DELAY TIME</td>
-                    <td>TRIG MODE</td>
+                    <td>DELAY<br/>TIME</td>
+                    <td>TRIG<br/>MODE</td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
-                        <input type="range" min="0" max="10" step="0.5" value={state.LFO_RATE} onChange={updateStateHandler("LFO_RATE")}></input>
+                        <input type="range" min="0" max="10" step="0.5" value={state.LFO_RATE} onChange={updateStateHandler("LFO_RATE")}/>
                     </td>
                     <td>
-                        <input type="range" min="0" max="10" step="0.5" value={state.LFO_DELAY} onChange={updateStateHandler("LFO_DELAY")}></input>
+                        <input type="range" min="0" max="10" step="0.5" value={state.LFO_DELAY} onChange={updateStateHandler("LFO_DELAY")}/>
                     </td>
                     <td className="radioButton">
                         <input type="radio" name="trigMode" value={LfoTriggerMode.AUTO} checked={state.TRIG_MODE === LfoTriggerMode.AUTO} onChange={updateStateHandler("TRIG_MODE")}/>AUTO<br/>

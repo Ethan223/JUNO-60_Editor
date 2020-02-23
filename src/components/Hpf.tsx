@@ -24,7 +24,7 @@ const Hpf: React.FC<HPFProps> = (props) => {
             <tbody>
                 <tr>
                     <td>
-                        <input type="range" min="0" max="3" step="1" value={state.HPF_CUTOFF} onChange={(ev: React.ChangeEvent<HTMLInputElement>) => setState({ HPF_CUTOFF: Number(ev.target.value) })}></input>
+                        <input type="range" min="0" max="3" step="1" value={state.HPF_CUTOFF} onChange={(ev: React.ChangeEvent<HTMLInputElement>) => setState({ HPF_CUTOFF: Number(ev.target.value) })}/>
                     </td>
                 </tr>
             </tbody>

@@ -13,13 +13,13 @@ const Chorus: React.FC = () => {
             <tbody>
                 <tr>
                     <td>
-                        <input type="checkbox" checked></input>
+                        <input type="checkbox" checked/>
                     </td>
                     <td>
-                        <input type="checkbox"></input>
+                        <input type="checkbox"/>
                     </td>
                     <td>
-                        <input type="checkbox"></input>
+                        <input type="checkbox"/>
                     </td>
                 </tr>
             </tbody>

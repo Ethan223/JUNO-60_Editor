@@ -16,23 +16,23 @@ const Vcf: React.FC = () => {
             <tbody>
                 <tr>
                     <td>
-                        <input type="range" min="0" max="10" step="0.5" defaultValue="10"></input>
+                        <input type="range" min="0" max="10" step="0.5" defaultValue="10"/>
                     </td>
                     <td>
-                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
+                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"/>
                     </td>
                     <td className="radioButton">
-                        <input type="radio" name="envPolarity" value="pos" checked></input>+<br></br>
-                        <input type="radio" name="envPolarity" value="neg"></input>-<br></br>
+                        <input type="radio" name="envPolarity" value="pos" checked/>+<br/>
+                        <input type="radio" name="envPolarity" value="neg"/>-<br/>
                     </td>
                     <td>
-                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
+                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"/>
                     </td>
                     <td>
-                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
+                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"/>
                     </td>
                     <td>
-                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"></input>
+                        <input type="range" min="0" max="10" step="0.5" defaultValue="0"/>
                     </td>
                 </tr>
             </tbody>
