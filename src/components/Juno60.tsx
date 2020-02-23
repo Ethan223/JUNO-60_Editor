@@ -51,7 +51,7 @@ const Juno60: React.FC = () =>  {
                     <tr>
                         {/* VCF contents */}
                         <td className="board-comp">
-                            <Vcf />
+                            <Vcf onChange={state => console.log(state)} />
                         </td>
                         {/* VCA contents */}
                         <td className="board-comp">
