@@ -14,10 +14,8 @@ const Chorus: React.FC<ChorusProps> = (props) => {
         CHORUS: ChorusType.OFF
     });
 
-    const updateStateHandler = (chorusType: ChorusType) => (ev: React.ChangeEvent<HTMLInputElement>) => {
-        if (chorusType === ChorusType.OFF) {
-            
-        }
+    const updateStateHandler = (type: ChorusType) => (ev: React.ChangeEvent<HTMLInputElement>) => {
+        setState({...state, ["CHORUS"]: type})
     }
 
     props.onChange(state);
