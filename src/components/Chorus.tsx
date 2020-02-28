@@ -15,12 +15,11 @@ const Chorus: React.FC<ChorusProps> = (props) => {
     });
 
     const updateStateHandler = (type: ChorusType) => (ev: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(state);
         if ((state.CHORUS === ChorusType.I || state.CHORUS === ChorusType.II)) {
             setState({CHORUS: ChorusType.BOTH});
         }
         else {
-            setState({...state, ["CHORUS"]: type});
+            setState({CHORUS: type});
         }
     }
 

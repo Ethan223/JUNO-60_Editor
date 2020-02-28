@@ -1,5 +1,5 @@
 import React from 'react';
-import './Juno60.css'
+import './Juno60.css';
 import Lfo from './Lfo';
 import Dco from './Dco';
 import Hpf from './Hpf';
