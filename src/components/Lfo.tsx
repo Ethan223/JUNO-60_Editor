@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LfoTriggerMode } from '../enums/Enums';
 
-interface LFOState {
+export interface LFOState {
     LFO_RATE: number;
     LFO_DELAY: number;
     TRIG_MODE: LfoTriggerMode;

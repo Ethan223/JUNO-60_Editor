@@ -9,6 +9,7 @@ import Env from './Env';
 import Chorus from './Chorus';
 
 const Juno60: React.FC = () =>  {
+    
     return(
         <div className="main">
             <h1>Roland JUNO-60 Editor</h1>
@@ -24,7 +25,11 @@ const Juno60: React.FC = () =>  {
                     <tr>
                         {/*LFO contents*/}
                         <td className="board-comp">
-                            <Lfo onChange={state => console.log(state)} />
+                            <Lfo onChange={state => {return <p>
+                                LFO RATE: {state.LFO_RATE}<br/>
+                                LFO DELAY: {state.LFO_DELAY}<br/>
+                                LFO TRIG MODE: {state.TRIG_MODE}<br/>
+                            </p>}} />
                         </td>
                         {/* DCO contents */}
                         <td className="board-comp">
@@ -68,6 +73,18 @@ const Juno60: React.FC = () =>  {
                     </tr>
                 </tbody>
             </table>
+            <br/>
+            <div className="debug">
+                <h2>Debug</h2>
+                <p>
+                    DCO LFO:<br/>
+                    DCO PWM:<br/>
+                    DCO PWM TYPE:<br/>
+                    DCO PUL:<br/>
+                    DCO SAW:<br/>
+                    DCO SUB:<br/>
+                </p>
+            </div>
         </div>
     )
 }

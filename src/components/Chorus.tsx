@@ -14,17 +14,9 @@ const Chorus: React.FC<ChorusProps> = (props) => {
         CHORUS: ChorusType.OFF
     });
 
-    const updateStateHandler = (type: ChorusType) => (ev: React.ChangeEvent<HTMLInputElement>) => {
-        if ((state.CHORUS === ChorusType.I || state.CHORUS === ChorusType.II)) {
-            setState({CHORUS: ChorusType.BOTH});
-        }
-        else {
-            setState({CHORUS: type});
-        }
-    }
-
     props.onChange(state);
 
+    // TODO: Both I and II type
     return(
         <table>
             <thead>
@@ -37,13 +29,13 @@ const Chorus: React.FC<ChorusProps> = (props) => {
             <tbody>
                 <tr>
                     <td>
-                        <input type="checkbox" checked={state.CHORUS === ChorusType.OFF} onChange={updateStateHandler(ChorusType.OFF)}/>
+                        <input type="checkbox" checked={state.CHORUS === ChorusType.OFF} onChange={() => setState({CHORUS: ChorusType.OFF})}/>
                     </td>
                     <td>
-                        <input type="checkbox" checked={state.CHORUS === ChorusType.I || state.CHORUS === ChorusType.BOTH} onChange={updateStateHandler(ChorusType.I)}/>
+                        <input type="checkbox" checked={state.CHORUS === ChorusType.I} onChange={() => setState({CHORUS: ChorusType.I})}/>
                     </td>
                     <td>
-                        <input type="checkbox" checked={state.CHORUS === ChorusType.II || state.CHORUS === ChorusType.BOTH} onChange={updateStateHandler(ChorusType.II)}/>
+                        <input type="checkbox" checked={state.CHORUS === ChorusType.II} onChange={() => setState({CHORUS: ChorusType.II})}/>
                     </td>
                 </tr>
             </tbody>

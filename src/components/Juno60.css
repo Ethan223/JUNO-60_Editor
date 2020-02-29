@@ -34,3 +34,7 @@ input {
 .radioButton {
   text-align: left;
 }
+
+.debug {
+  border: double;
+}
