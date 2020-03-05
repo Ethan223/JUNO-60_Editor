@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { VcfPolarity } from '../enums/Enums';
 
-interface VCFState {
+export interface VCFState {
     CUTOFF: number;
     RES: number;
     POLARITY: VcfPolarity;
@@ -18,9 +18,12 @@ const Vcf: React.FC<VCFProps> = (props) => {
     const [state, setState] = useState<VCFState>({CUTOFF: 10, RES: 0, POLARITY: VcfPolarity.NORMAL, ENV_MOD: 0, LFO_MOD: 0, KYBD_MOD: 0});
 
     const updateStateHandler = (key: keyof VCFState) => (ev: React.ChangeEvent<HTMLInputElement>) => {
-        setState({...state, [key]: Number(ev.target.value)});
+        const nextState = {...state, [key]: Number(ev.target.value)};
+        setState(nextState);
+        props.onChange(nextState);
     }
-    props.onChange(state);
+    
+    useEffect(() => props.onChange(state), []);
 
     return(
         <table>

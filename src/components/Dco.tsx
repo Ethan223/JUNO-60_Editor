@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PwmType } from '../enums/Enums';
 
-interface DCOState {
+export interface DCOState {
     LFO_MOD: number;
     PWM: number;
     PWM_TYPE: PwmType;
@@ -30,13 +30,18 @@ const Dco: React.FC<DCOProps> = (props) => {
 
     const updateStateHandler = (key: keyof DCOState) => (ev: React.ChangeEvent<HTMLInputElement>) => {
         if (key === 'DCO_PULSE' || key === 'DCO_SAW' || key === 'DCO_SUB') {
-            setState({...state, [key]: ev.target.checked});
+            const nextState = {...state, [key]: ev.target.checked};
+            setState(nextState);
+            props.onChange(nextState);
         }
         else {
-            setState({...state, [key]: Number(ev.target.value)});
+            const nextState = {...state, [key]: Number(ev.target.value)};
+            setState(nextState);
+            props.onChange(nextState);
         }
     }
-    props.onChange(state);
+    
+    useEffect(() => props.onChange(state), []);
 
     return(
         <table>

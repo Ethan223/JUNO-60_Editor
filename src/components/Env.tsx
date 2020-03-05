@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-interface ENVState {
+export interface ENVState {
     ATTACK: number;
     DECAY: number;
     SUSTAIN: number;
@@ -15,9 +15,12 @@ const Env: React.FC<ENVProps> = (props) => {
     const [state, setState] = useState<ENVState>({ATTACK: 0, DECAY: 0, SUSTAIN: 10, RELEASE: 0});
 
     const updateStateHandler = (key: keyof ENVState) => (ev: React.ChangeEvent<HTMLInputElement>) => {
-        setState({...state, [key]: Number(ev.target.value)});
+        const nextState = {...state, [key]: Number(ev.target.value)};
+        setState(nextState);
+        props.onChange(nextState);
     }
-    props.onChange(state);
+    
+    useEffect(() => props.onChange(state), []);
 
     return(
         <table>

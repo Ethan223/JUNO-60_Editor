@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-interface HPFState {
+export interface HPFState {
     HPF_CUTOFF: number;
 }
 
@@ -12,7 +12,13 @@ const Hpf: React.FC<HPFProps> = (props) => {
     const [state, setState] = useState<HPFState>({
         HPF_CUTOFF: 0
     });
-    props.onChange(state);
+    
+    const dispatchState = (state: HPFState) => {
+        setState(state);
+        props.onChange(state);
+    }
+
+    useEffect(() => props.onChange(state), []);
 
     return(
         <table>
@@ -24,7 +30,7 @@ const Hpf: React.FC<HPFProps> = (props) => {
             <tbody>
                 <tr>
                     <td>
-                        <input type="range" min="0" max="3" step="1" value={state.HPF_CUTOFF} onChange={(ev: React.ChangeEvent<HTMLInputElement>) => setState({ HPF_CUTOFF: Number(ev.target.value) })}/>
+                        <input type="range" min="0" max="3" step="1" value={state.HPF_CUTOFF} onChange={(ev: React.ChangeEvent<HTMLInputElement>) => dispatchState({ HPF_CUTOFF: Number(ev.target.value) })}/>
                     </td>
                 </tr>
             </tbody>

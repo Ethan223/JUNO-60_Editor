@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChorusType } from '../enums/Enums';
 
-interface ChorusState {
+export interface ChorusState {
     CHORUS: ChorusType;
 }
 
@@ -14,7 +14,12 @@ const Chorus: React.FC<ChorusProps> = (props) => {
         CHORUS: ChorusType.OFF
     });
 
-    props.onChange(state);
+    const dispatchState = (state: ChorusState) => {
+        setState(state);
+        props.onChange(state);
+    }
+
+    useEffect(() => props.onChange(state), []);
 
     // TODO: Both I and II type
     return(
@@ -29,13 +34,13 @@ const Chorus: React.FC<ChorusProps> = (props) => {
             <tbody>
                 <tr>
                     <td>
-                        <input type="checkbox" checked={state.CHORUS === ChorusType.OFF} onChange={() => setState({CHORUS: ChorusType.OFF})}/>
+                        <input type="checkbox" checked={state.CHORUS === ChorusType.OFF} onChange={() => dispatchState({CHORUS: ChorusType.OFF})}/>
                     </td>
                     <td>
-                        <input type="checkbox" checked={state.CHORUS === ChorusType.I} onChange={() => setState({CHORUS: ChorusType.I})}/>
+                        <input type="checkbox" checked={state.CHORUS === ChorusType.I} onChange={() => dispatchState({CHORUS: ChorusType.I})}/>
                     </td>
                     <td>
-                        <input type="checkbox" checked={state.CHORUS === ChorusType.II} onChange={() => setState({CHORUS: ChorusType.II})}/>
+                        <input type="checkbox" checked={state.CHORUS === ChorusType.II} onChange={() => dispatchState({CHORUS: ChorusType.II})}/>
                     </td>
                 </tr>
             </tbody>
