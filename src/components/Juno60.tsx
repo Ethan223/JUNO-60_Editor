@@ -128,7 +128,7 @@ const Juno60: React.FC = () =>  {
             <div className="debug">
                 <h2>Debug</h2>
                 <pre>
-                    {JSON.stringify(state, null, 2)}
+                    {JSON.stringify(state, null, 4)}
                 </pre>
             </div>
         </div>
