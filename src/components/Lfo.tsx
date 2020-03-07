@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { LfoTriggerMode } from '../enums/Enums';
 
 export interface LFOState {
@@ -15,9 +15,12 @@ const Lfo: React.FC<LFOProps> = (props) => {
     const [state, setState] = useState<LFOState>({LFO_RATE: 0, LFO_DELAY: 0, TRIG_MODE: LfoTriggerMode.AUTO});
     
     const updateStateHandler = (key: keyof LFOState) => (ev: React.ChangeEvent<HTMLInputElement>) => {
-        setState({...state, [key]: Number(ev.target.value)});
+        const nextState = {...state, [key]: Number(ev.target.value)};
+        setState(nextState);
+        props.onChange(nextState);
     }
-    props.onChange(state);
+
+    useEffect(() => props.onChange(state), []);
 
     return(
         <table>

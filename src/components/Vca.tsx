@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { VcaRoute } from '../enums/Enums';
 
-interface VCAState {
+export interface VCAState {
     ROUTE: VcaRoute;
     LEVEL: number;
 }
@@ -14,9 +14,12 @@ const Vca: React.FC<VCAProps> = (props) => {
     const [state, setState] = useState<VCAState>({ROUTE: VcaRoute.GATE, LEVEL: 0});
 
     const updateStateHandler = (key: keyof VCAState) => (ev: React.ChangeEvent<HTMLInputElement>) => {
-        setState({...state, [key]: Number(ev.target.value)});
+        const nextState = {...state, [key]: Number(ev.target.value)};
+        setState(nextState);
+        props.onChange(nextState);
     }
-    props.onChange(state);
+    
+    useEffect(() => props.onChange(state), []);
 
     return(
         <table>
