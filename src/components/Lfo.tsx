@@ -20,6 +20,7 @@ const Lfo: React.FC<LFOProps> = (props) => {
         props.onChange(nextState);
     }
 
+    // When component is initialized, run this only once ([])
     useEffect(() => props.onChange(state), []);
 
     return(

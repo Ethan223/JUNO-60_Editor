@@ -25,3 +25,7 @@ export enum ChorusType {
     II,
     BOTH,
 }
+
+export enum StatePart {
+    LFO = 'LFO', DCO = 'DCO', HPF = 'HPF', VCF = 'VCF', VCA = 'VCA', ENV = 'ENV', CHORUS = 'CHORUS',
+}

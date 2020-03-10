@@ -7,6 +7,7 @@ import Vcf, { VCFState } from './Vcf';
 import Vca, { VCAState } from './Vca';
 import Env, { ENVState } from './Env';
 import Chorus, { ChorusState } from './Chorus';
+import { StatePart } from '../enums/Enums'
 
 type RootState = {
     LFO: LFOState,
@@ -15,11 +16,7 @@ type RootState = {
     VCF: VCFState,
     VCA: VCAState,
     ENV: ENVState,
-    Chorus: ChorusState
-}
-
-enum StatePart {
-    LFO = 'LFO', DCO = 'DCO', HPF = 'HPF', VCF = 'VCF', VCA = 'VCA', ENV = 'ENV', Chorus = 'Chorus',
+    CHORUS: ChorusState
 }
 
 const LFOUpdate = (update: LFOState) => ({ type: StatePart.LFO as StatePart.LFO, update });
@@ -28,7 +25,7 @@ const HPFUpdate = (update: HPFState) => ({ type: StatePart.HPF as StatePart.HPF,
 const VCFUpdate = (update: VCFState) => ({ type: StatePart.VCF as StatePart.VCF, update });
 const VCAUpdate = (update: VCAState) => ({ type: StatePart.VCA as StatePart.VCA, update });
 const ENVUpdate = (update: ENVState) => ({ type: StatePart.ENV as StatePart.ENV, update });
-const ChorusUpdate = (update: ChorusState) => ({ type: StatePart.Chorus as StatePart.Chorus, update });
+const ChorusUpdate = (update: ChorusState) => ({ type: StatePart.CHORUS as StatePart.CHORUS, update });
 
 type RootAction =
     ReturnType<typeof LFOUpdate> |
@@ -41,14 +38,22 @@ type RootAction =
 
 function reducer(state: RootState, action: RootAction): RootState {
     switch (action.type) {
-        case StatePart.LFO: return { ...state, LFO: action.update };
-        case StatePart.DCO: return { ...state, DCO: action.update };
-        case StatePart.HPF: return { ...state, HPF: action.update };
-        case StatePart.VCF: return { ...state, VCF: action.update };
-        case StatePart.VCA: return { ...state, VCA: action.update };
-        case StatePart.ENV: return { ...state, ENV: action.update };
-        case StatePart.Chorus: return { ...state, Chorus: action.update };
-        default: return state;
+        case StatePart.LFO:
+            return { ...state, LFO: action.update };
+        case StatePart.DCO:
+            return { ...state, DCO: action.update };
+        case StatePart.HPF:
+            return { ...state, HPF: action.update };
+        case StatePart.VCF:
+            return { ...state, VCF: action.update };
+        case StatePart.VCA:
+            return { ...state, VCA: action.update };
+        case StatePart.ENV:
+            return { ...state, ENV: action.update };
+        case StatePart.CHORUS:
+            return { ...state, CHORUS: action.update };
+        default:
+            return state;
     }
 }
 
@@ -59,10 +64,10 @@ const initialState: RootState = {
     VCF: { } as VCFState,
     VCA: { } as VCAState,
     ENV: { } as ENVState,
-    Chorus: { } as ChorusState,
+    CHORUS: { } as ChorusState,
 };
 
-const Juno60: React.FC = () =>  {
+const Juno60: React.FC = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     return(
